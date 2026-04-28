@@ -2,7 +2,7 @@
    ДАННЫЕ ПЛАНЕТ
    ===================================================================== */
 
-const solarPlanets = [
+const solarPlanets =[
   {
     id: 'earth',
     name: 'Земля',
@@ -10,7 +10,7 @@ const solarPlanets = [
     image: 'planets/earth.jpg',
     description:
       'Земля — единственная известная планета во Вселенной, на которой существует жизнь. Около 71% её поверхности покрыто водой, а атмосфера из азота и кислорода защищает живые организмы от вредного излучения. Магнитное поле Земли отклоняет потоки заряженных частиц от Солнца, создавая полярные сияния. Её единственный спутник — Луна — стабилизирует наклон оси и вызывает приливы и отливы.',
-    facts: [
+    facts:[
       { label: 'Диаметр', value: '12 742 км' },
       { label: 'Расстояние от Солнца', value: '149,6 млн км' },
       { label: 'Длина года', value: '365,25 дней' },
@@ -28,7 +28,7 @@ const solarPlanets = [
     image: 'planets/mars.jpg',
     description:
       'Марс называют Красной планетой за характерный цвет поверхности, обусловленный оксидом железа — обычной ржавчиной — в его почве. Здесь находится самая высокая гора Солнечной системы — потухший вулкан Олимп высотой около 22 км, и самый длинный каньон — Долина Маринера протяжённостью более 4 000 км. Учёные обнаружили следы древних рек и озёр: в далёком прошлом на Марсе была жидкая вода. Сегодня он — главный кандидат на колонизацию человеком.',
-    facts: [
+    facts:[
       { label: 'Диаметр', value: '6 779 км' },
       { label: 'Расстояние от Солнца', value: '227,9 млн км' },
       { label: 'Длина года', value: '687 дней' },
@@ -46,7 +46,7 @@ const solarPlanets = [
     image: 'planets/jupiter.jpg',
     description:
       'Юпитер — самая большая планета Солнечной системы. Это газовый гигант, состоящий преимущественно из водорода и гелия, и его масса превышает массу всех остальных планет вместе взятых в 2,5 раза. На Юпитере бушует Большое Красное Пятно — гигантский ураган, который существует уже более 350 лет и больше Земли по размеру. У Юпитера более 95 спутников, среди которых выделяются четыре «галилеевых» — Ио, Европа, Ганимед и Каллисто.',
-    facts: [
+    facts:[
       { label: 'Диаметр', value: '139 820 км' },
       { label: 'Расстояние от Солнца', value: '778,5 млн км' },
       { label: 'Длина года', value: '11,86 земных лет' },
@@ -64,7 +64,7 @@ const solarPlanets = [
     image: 'planets/saturn.jpg',
     description:
       'Сатурн знаменит своей удивительной системой колец, состоящей из миллиардов кусочков льда, камней и пыли — от пылинок до глыб размером с дом. Это второй по величине газовый гигант. Поразительный факт: средняя плотность Сатурна меньше плотности воды, и теоретически он мог бы плавать в гигантском океане. У Сатурна 146 известных спутников, среди которых выделяется Титан — единственный спутник в Солнечной системе с плотной атмосферой и метановыми озёрами.',
-    facts: [
+    facts:[
       { label: 'Диаметр (без колец)', value: '116 460 км' },
       { label: 'Расстояние от Солнца', value: '1,43 млрд км' },
       { label: 'Длина года', value: '29,5 земных лет' },
@@ -77,7 +77,7 @@ const solarPlanets = [
   },
 ];
 
-const earthLikePlanets = [
+const earthLikePlanets =[
   {
     id: 'kepler-452b',
     name: 'Kepler-452b',
@@ -85,7 +85,7 @@ const earthLikePlanets = [
     image: 'planets/kepler-452b.jpg',
     description:
       'Kepler-452b — экзопланета, открытая телескопом «Кеплер» в 2015 году. Её часто называют «двоюродной сестрой Земли», потому что она вращается вокруг звезды, очень похожей на наше Солнце, и находится в обитаемой зоне — там, где может существовать жидкая вода. Год на Kepler-452b длится 385 земных дней — почти столько же, сколько у нас. Планета примерно в 1,5 раза больше Земли, и её гравитация может быть почти вдвое сильнее.',
-    facts: [
+    facts:[
       { label: 'Расстояние до Земли', value: '~1 400 световых лет' },
       { label: 'Созвездие', value: 'Лебедь' },
       { label: 'Радиус', value: '~1,5 радиуса Земли' },
@@ -103,7 +103,7 @@ const earthLikePlanets = [
     image: 'planets/proxima-b.jpg',
     description:
       'Proxima Centauri b — самая близкая к нам экзопланета, открытая в 2016 году. Она вращается вокруг ближайшей к Солнцу звезды — красного карлика Проксима Центавра, всего в 4,24 светового года от нас. Планета находится в обитаемой зоне, где возможно существование жидкой воды. Однако из-за активности красного карлика её атмосфера может подвергаться сильному рентгеновскому и ультрафиолетовому излучению. Полёт к ней даже на самом быстром современном корабле занял бы десятки тысяч лет.',
-    facts: [
+    facts:[
       { label: 'Расстояние до Земли', value: '4,24 световых года' },
       { label: 'Созвездие', value: 'Центавр' },
       { label: 'Масса', value: '~1,17 массы Земли' },
@@ -121,7 +121,7 @@ const earthLikePlanets = [
     image: 'planets/trappist-1e.jpg',
     description:
       'TRAPPIST-1e — одна из семи планет, обращающихся вокруг ультрахолодного карлика TRAPPIST-1 в 40 световых годах от нас. По размеру, массе и количеству получаемой энергии она ближе всего к Земле среди всех известных экзопланет. Учёные считают её одним из лучших кандидатов для поиска внеземной жизни: на ней может быть жидкая вода и подходящая атмосфера. Из-за близости к звезде планета, вероятно, повёрнута к ней одной стороной — там вечный день, а на другой стороне — вечная ночь.',
-    facts: [
+    facts:[
       { label: 'Расстояние до Земли', value: '~40 световых лет' },
       { label: 'Созвездие', value: 'Водолей' },
       { label: 'Радиус', value: '0,92 радиуса Земли' },
@@ -139,7 +139,7 @@ const earthLikePlanets = [
     image: 'planets/kepler-186f.jpg',
     description:
       'Kepler-186f стала первой подтверждённой экзопланетой размером с Землю, найденной в обитаемой зоне другой звезды. Она почти такого же размера, как наша планета, и получает примерно треть энергии, которую Земля получает от Солнца. Из-за того, что её звезда — красный карлик, свет на её поверхности был бы тусклее и краснее, чем на Земле. Если на ней есть растения, они, вероятно, имели бы не зелёный, а тёмно-красный или почти чёрный цвет, чтобы лучше поглощать свет.',
-    facts: [
+    facts:[
       { label: 'Расстояние до Земли', value: '~580 световых лет' },
       { label: 'Созвездие', value: 'Лебедь' },
       { label: 'Радиус', value: '1,11 радиуса Земли' },
@@ -160,6 +160,7 @@ const state = {
   view: 'solar',          // 'solar' | 'earth-like'
   selectedId: null,       // id выбранной планеты или null
   isAnimating: false,     // блокировка кликов во время анимации
+  savedScrollY: 0,        // Сохраняем позицию скролла
 };
 
 /* =====================================================================
@@ -171,8 +172,6 @@ function renderStarfield() {
   const STAR_COUNT = 220;
   const fragment = document.createDocumentFragment();
 
-  // Простой детерминированный псевдослучайный генератор, чтобы расположение
-  // звёзд было одинаковым между обновлениями страницы.
   function mulberry32(seed) {
     return function () {
       seed |= 0;
@@ -187,10 +186,10 @@ function renderStarfield() {
   for (let i = 0; i < STAR_COUNT; i++) {
     const star = document.createElement('span');
     star.className = 'star';
-    const size = rand() * 2.4 + 0.6;       // 0.6 – 3 px
-    const opacity = rand() * 0.65 + 0.3;   // 0.3 – 0.95
-    const duration = rand() * 5 + 3;       // 3 – 8 s
-    const delay = rand() * 6;              // 0 – 6 s
+    const size = rand() * 2.4 + 0.6;
+    const opacity = rand() * 0.65 + 0.3;
+    const duration = rand() * 5 + 3;
+    const delay = rand() * 6;
 
     star.style.left = `${rand() * 100}%`;
     star.style.top = `${rand() * 100}%`;
@@ -216,7 +215,6 @@ function getPlanetById(id) {
   return solarPlanets.concat(earthLikePlanets).find((p) => p.id === id);
 }
 
-/** Уменьшаем размеры планет на узких экранах, чтобы 4 шт. помещались красиво. */
 function getResponsiveOrbSize(baseSize) {
   const w = window.innerWidth;
   if (w < 480) return Math.min(baseSize, 92);
@@ -251,7 +249,6 @@ function renderPlanetRow() {
 
     const size = getResponsiveOrbSize(planet.overviewSize);
 
-    // Кнопка-орб
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'orb-button';
@@ -285,7 +282,6 @@ function renderPlanetRow() {
       openDetail(planet.id, orb);
     });
 
-    // Подпись
     const label = document.createElement('div');
     label.className = 'planet-label';
     label.textContent = planet.name;
@@ -293,7 +289,6 @@ function renderPlanetRow() {
     tile.appendChild(label);
     tile.appendChild(btn);
 
-    // Доп. кнопка под Землёй — переключение на землеподобные планеты
     if (state.view === 'solar' && planet.id === 'earth') {
       const extra = document.createElement('button');
       extra.type = 'button';
@@ -307,11 +302,9 @@ function renderPlanetRow() {
     row.appendChild(tile);
   });
 
-  // Кнопка возврата при отображении землеподобных
   const backRow = document.getElementById('back-to-solar');
   backRow.hidden = state.view !== 'earth-like';
 
-  // Заголовок секции
   document.getElementById('overview-title').textContent =
     state.view === 'solar'
       ? 'Планеты Солнечной системы'
@@ -368,10 +361,14 @@ function openDetail(planetId, sourceOrbEl) {
   state.isAnimating = true;
   state.selectedId = planetId;
 
-  // 1) Запоминаем геометрию исходного орба
+  // ЗАПОМИНАЕМ скролл перед любыми изменениями
+  state.savedScrollY = window.scrollY;
+
+  const stage = document.getElementById('stage');
+  stage.style.minHeight = `${stage.offsetHeight}px`;
+
   const fromRect = sourceOrbEl.getBoundingClientRect();
 
-  // 2) Подготавливаем содержимое детального вида
   renderDetailContent(planet);
 
   const overview = document.getElementById('overview');
@@ -379,36 +376,26 @@ function openDetail(planetId, sourceOrbEl) {
   const targetOrb = document.getElementById('detail-orb');
   const info = document.getElementById('detail-info');
 
-  // 3) Делаем детальный вид видимым (но мгновенно), чтобы измерить орб
+  overview.hidden = true;
   detail.hidden = false;
-  detail.style.opacity = '0';
 
-  // Принудительный reflow, чтобы получить актуальные размеры
   void targetOrb.offsetWidth;
   const toRect = targetOrb.getBoundingClientRect();
 
-  // Если размеры ещё нулевые (бывает на медленных машинах) — берём fallback
   if (toRect.width === 0) {
-    overview.hidden = true;
-    detail.style.opacity = '';
     info.classList.remove('animate-in');
     void info.offsetWidth;
     info.classList.add('animate-in');
+    stage.style.minHeight = '';
     state.isAnimating = false;
     return;
   }
 
-  // 4) Скрываем обзор и показываем деталь
-  overview.hidden = true;
-  detail.style.opacity = '';
-
-  // 5) Применяем FLIP: орб стартует от старой позиции и едет к новой
   const dx = fromRect.left + fromRect.width / 2 - (toRect.left + toRect.width / 2);
   const dy = fromRect.top + fromRect.height / 2 - (toRect.top + toRect.height / 2);
   const scale = fromRect.width / toRect.width;
 
-  const animation = targetOrb.animate(
-    [
+  const animation = targetOrb.animate([
       { transform: `translate(${dx}px, ${dy}px) scale(${scale})` },
       { transform: 'translate(0, 0) scale(1)' },
     ],
@@ -416,18 +403,19 @@ function openDetail(planetId, sourceOrbEl) {
       duration: 850,
       easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
       fill: 'both',
-    },
+    }
   );
 
-  // 6) Запускаем появление текста
   info.classList.remove('animate-in');
-  void info.offsetWidth; // перезапустить анимацию
+  void info.offsetWidth;
   info.classList.add('animate-in');
 
-  // 7) Прокручиваем к началу детального блока
+  // Плавно скроллим пользователя к описанию планеты
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
   animation.onfinish = () => {
+    targetOrb.getAnimations().forEach((a) => a.cancel());
+    stage.style.minHeight = ''; 
     state.isAnimating = false;
   };
 }
@@ -438,54 +426,90 @@ function openDetail(planetId, sourceOrbEl) {
 
 function closeDetail() {
   if (state.isAnimating) return;
+  state.isAnimating = true;
 
+  const stage = document.getElementById('stage');
   const detail = document.getElementById('detail');
   const overview = document.getElementById('overview');
   const targetOrb = document.getElementById('detail-orb');
   const info = document.getElementById('detail-info');
+  
+  const backBtn = document.querySelector('.detail-back');
 
-  state.isAnimating = true;
-
-  // Сначала прячем текст, чтобы не дёргался при свёртке планеты
+  stage.style.minHeight = `${stage.offsetHeight}px`;
   info.classList.remove('animate-in');
 
-  // Покажем обзор «под» детальным видом, чтобы измерить итоговую позицию
-  overview.hidden = false;
-
   const planetId = state.selectedId;
-  const sourceOrbEl = document.querySelector(
-    `.orb-button[data-planet-id="${planetId}"] .planet-orb`,
-  );
+  const sourceOrbEl = document.querySelector(`.orb-button[data-planet-id="${planetId}"] .planet-orb`);
 
-  // Если плитки нет (например, переключили вид и вернулись), просто фейдим
   if (!sourceOrbEl) {
+    overview.hidden = false;
     detail.hidden = true;
+    stage.style.minHeight = '';
     state.selectedId = null;
     state.isAnimating = false;
+    window.scrollTo(0, state.savedScrollY || 0); // возврат скролла на всякий случай
     return;
   }
 
-  const toRect = sourceOrbEl.getBoundingClientRect();
+  // 1) Измеряем стартовую позицию планеты ДО изменения скролла
   const fromRect = targetOrb.getBoundingClientRect();
+
+  const detailHeight = detail.offsetHeight;
+  
+  // Текущий скролл (человек мог пролистать информацию о планете вниз)
+  const currentScrollY = window.scrollY;
+  // Скролл, на который нужно вернуться (меню планет)
+  const targetScrollY = state.savedScrollY || 0;
+
+  // 2) Чтобы открытая планета визуально не прыгнула во время смены скролла,
+  // мы фиксируем её абсолютно, но корректируем "top" на разницу скроллов
+  detail.style.position = 'absolute';
+  detail.style.top = `${targetScrollY - currentScrollY}px`;
+  detail.style.left = '0';
+  detail.style.width = '100%';
+  detail.style.height = `${detailHeight}px`;
+  detail.style.zIndex = '10';
+
+  overview.hidden = false;
+  
+  // 3) МГНОВЕННО возвращаем скролл к старому месту в обзоре
+  window.scrollTo(0, targetScrollY);
+
+  const overviewAnim = overview.animate([
+      { opacity: 0 },
+      { opacity: 1 }
+    ], 
+    { duration: 400, easing: 'ease-out', fill: 'both' }
+  );
+
+  // 4) Теперь, когда страница на нужном месте, измеряем конечную точку для анимации
+  const toRect = sourceOrbEl.getBoundingClientRect();
 
   const dx = toRect.left + toRect.width / 2 - (fromRect.left + fromRect.width / 2);
   const dy = toRect.top + toRect.height / 2 - (fromRect.top + fromRect.height / 2);
   const scale = toRect.width / fromRect.width;
 
-  // Скроем обзорный орб (исходную плитку), пока летит большая планета
   sourceOrbEl.style.opacity = '0';
 
-  // Делаем фейд текста параллельно
-  const infoAnim = info.animate(
-    [
+  const infoAnim = info.animate([
       { opacity: 1, transform: 'translateX(0)' },
       { opacity: 0, transform: 'translateX(-32px)' },
     ],
-    { duration: 350, easing: 'ease-in', fill: 'forwards' },
+    { duration: 350, easing: 'ease-in', fill: 'forwards' }
   );
 
-  const orbAnim = targetOrb.animate(
-    [
+  let btnAnim = null;
+  if (backBtn) {
+    btnAnim = backBtn.animate([
+        { opacity: 1 },
+        { opacity: 0 }
+      ],
+      { duration: 250, easing: 'ease-in', fill: 'forwards' }
+    );
+  }
+
+  const orbAnim = targetOrb.animate([
       { transform: 'translate(0, 0) scale(1)' },
       { transform: `translate(${dx}px, ${dy}px) scale(${scale})` },
     ],
@@ -493,15 +517,36 @@ function closeDetail() {
       duration: 750,
       easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
       fill: 'forwards',
-    },
+    }
   );
 
-  Promise.all([
+  const animations =[
     orbAnim.finished.catch(() => {}),
     infoAnim.finished.catch(() => {}),
-  ]).then(() => {
+    overviewAnim.finished.catch(() => {})
+  ];
+  if (btnAnim) {
+    animations.push(btnAnim.finished.catch(() => {}));
+  }
+
+  Promise.all(animations).then(() => {
     detail.hidden = true;
+
+    detail.style.position = '';
+    detail.style.top = '';
+    detail.style.left = '';
+    detail.style.width = '';
+    detail.style.height = '';
+    detail.style.zIndex = '';
+    stage.style.minHeight = '';
+
     targetOrb.getAnimations().forEach((a) => a.cancel());
+    info.getAnimations().forEach((a) => a.cancel()); 
+    overview.getAnimations().forEach((a) => a.cancel());
+    if (backBtn) {
+      backBtn.getAnimations().forEach((a) => a.cancel());
+    }
+
     sourceOrbEl.style.opacity = '';
     state.selectedId = null;
     state.isAnimating = false;
@@ -517,28 +562,24 @@ function switchView(view) {
   state.view = view;
   state.selectedId = null;
 
-  // Обновляем активный таб
   document.querySelectorAll('.tab').forEach((tab) => {
     const isActive = tab.dataset.view === view;
     tab.classList.toggle('is-active', isActive);
     tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
 
-  // Если открыт детальный — закроем без анимации (планета может быть из другого набора)
   const detail = document.getElementById('detail');
   if (!detail.hidden) {
     detail.hidden = true;
   }
   document.getElementById('overview').hidden = false;
 
-  // Перерисовываем ряд с лёгкой анимацией перепоявления
   const row = document.getElementById('planet-row');
   row.style.opacity = '0';
   row.style.transform = 'translateY(8px)';
   setTimeout(() => {
     renderPlanetRow();
-    row.animate(
-      [
+    row.animate([
         { opacity: 0, transform: 'translateY(8px)' },
         { opacity: 1, transform: 'translateY(0)' },
       ],
@@ -552,12 +593,10 @@ function switchView(view) {
    ===================================================================== */
 
 function bindEvents() {
-  // Табы
   document.querySelectorAll('.tab').forEach((tab) => {
     tab.addEventListener('click', () => switchView(tab.dataset.view));
   });
 
-  // Кнопки "Назад"
   document.addEventListener('click', (e) => {
     const target = e.target.closest('[data-action]');
     if (!target) return;
@@ -566,12 +605,10 @@ function bindEvents() {
     if (action === 'back-to-solar') switchView('solar');
   });
 
-  // Esc — закрывает деталь
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && state.selectedId) closeDetail();
   });
 
-  // Перерисовать ряд при ресайзе (размеры орбов адаптивные)
   let resizeTimer = null;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
