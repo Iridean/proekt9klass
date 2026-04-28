@@ -1,0 +1,558 @@
+/* =========================================================
+   Космическая палитра (5 цветов) и базовые стили
+   ========================================================= */
+:root {
+  --background: #06080f;       /* глубокий тёмно-синий фон */
+  --panel: #11162a;            /* приподнятые карточки */
+  --panel-2: #1a2140;          /* активные/наведённые состояния */
+  --foreground: #f1f4ff;       /* почти белый «звёздный свет» */
+  --muted: #8b95b8;            /* приглушённый текст */
+  --primary: #5fc8ff;          /* космический cyan */
+  --accent: #ffcf6b;           /* тёплое золото звезды */
+  --border: rgba(140, 160, 220, 0.18);
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+}
+
+body {
+  /* Туманности поверх фона */
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(60, 90, 200, 0.28), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 85% 90%, rgba(40, 140, 180, 0.22), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(80, 50, 160, 0.18), transparent 70%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Звёздное небо
+   ========================================================= */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background: var(--foreground);
+  border-radius: 50%;
+  animation: twinkle var(--twinkle-duration, 4s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: var(--star-base-opacity, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.18;
+    transform: scale(0.8);
+  }
+}
+
+/* =========================================================
+   Контейнер
+   ========================================================= */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+/* =========================================================
+   Шапка
+   ========================================================= */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0 0 16px;
+}
+
+.eyebrow.accent {
+  color: var(--accent);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.subtitle {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+/* Табы */
+.tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  background: rgba(17, 22, 42, 0.6);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tab {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.tab:hover {
+  color: var(--foreground);
+}
+
+.tab.is-active {
+  background: var(--primary);
+  color: #06121d;
+}
+
+/* =========================================================
+   Сцена / общий блок
+   ========================================================= */
+.stage {
+  position: relative;
+}
+
+.overview-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.section-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================================================
+   Ряд планет (обзор)
+   ========================================================= */
+.planet-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 56px 64px;
+  padding: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .planet-row {
+    gap: 40px 32px;
+  }
+}
+
+.planet-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.planet-label {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.planet-extra-action {
+  appearance: none;
+  background: rgba(17, 22, 42, 0.6);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.planet-extra-action:hover {
+  border-color: rgba(95, 200, 255, 0.5);
+  background: rgba(95, 200, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.planet-extra-action .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* =========================================================
+   Орб (планета)
+   ========================================================= */
+.planet-orb {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: var(--orb-size, 130px);
+  height: var(--orb-size, 130px);
+  background: #000;
+  flex-shrink: 0;
+}
+
+.planet-orb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: planet-spin var(--spin-duration, 30s) linear infinite;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.planet-orb .orb-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow:
+    inset -16px -10px 50px rgba(0, 0, 0, 0.55),
+    inset 8px 8px 30px rgba(255, 255, 255, 0.04);
+}
+
+@keyframes planet-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Кнопка-орб для строки */
+.orb-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.orb-button:focus-visible {
+  outline: 3px solid rgba(95, 200, 255, 0.6);
+  outline-offset: 4px;
+}
+
+.orb-button:hover {
+  transform: scale(1.06);
+}
+
+.orb-button:active {
+  transform: scale(0.96);
+}
+
+/* =========================================================
+   Детальный вид
+   ========================================================= */
+.detail {
+  position: relative;
+  animation: fade-in 0.4s ease both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.detail-back {
+  margin-bottom: 32px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .detail-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+}
+
+.info {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .info {
+    order: 1;
+  }
+}
+
+.detail-orb-wrap {
+  order: 1;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .detail-orb-wrap {
+    order: 2;
+    justify-content: flex-end;
+  }
+}
+
+.planet-name {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.planet-description {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(241, 244, 255, 0.86);
+  max-width: 56ch;
+  margin: 0 0 28px;
+  text-wrap: pretty;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 480px) {
+  .facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.fact {
+  border: 1px solid var(--border);
+  background: rgba(17, 22, 42, 0.45);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.fact dt {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 4px;
+}
+
+.fact dd {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--foreground);
+  margin: 0;
+}
+
+/* =========================================================
+   Кнопка "ghost"
+   ========================================================= */
+.ghost-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(17, 22, 42, 0.5);
+  border: 1px solid var(--border);
+  color: rgba(241, 244, 255, 0.85);
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.ghost-btn:hover {
+  border-color: rgba(95, 200, 255, 0.5);
+  color: var(--foreground);
+  background: rgba(95, 200, 255, 0.08);
+}
+
+.ghost-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.ghost-btn:hover svg {
+  transform: translateX(-2px);
+}
+
+.back-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+/* =========================================================
+   Анимации появления текста (детальный вид)
+   ========================================================= */
+.info.animate-in .eyebrow,
+.info.animate-in .planet-name,
+.info.animate-in .planet-description,
+.info.animate-in .fact {
+  animation: slide-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.info.animate-in .eyebrow            { animation-delay: 0.20s; }
+.info.animate-in .planet-name        { animation-delay: 0.28s; }
+.info.animate-in .planet-description { animation-delay: 0.36s; }
+.info.animate-in .fact:nth-child(1)  { animation-delay: 0.44s; }
+.info.animate-in .fact:nth-child(2)  { animation-delay: 0.50s; }
+.info.animate-in .fact:nth-child(3)  { animation-delay: 0.56s; }
+.info.animate-in .fact:nth-child(4)  { animation-delay: 0.62s; }
+.info.animate-in .fact:nth-child(5)  { animation-delay: 0.68s; }
+.info.animate-in .fact:nth-child(6)  { animation-delay: 0.74s; }
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Плавное появление плиток в обзоре */
+.planet-tile {
+  animation: tile-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.planet-tile:nth-child(1) { animation-delay: 0.05s; }
+.planet-tile:nth-child(2) { animation-delay: 0.13s; }
+.planet-tile:nth-child(3) { animation-delay: 0.21s; }
+.planet-tile:nth-child(4) { animation-delay: 0.29s; }
+
+@keyframes tile-pop {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Скрытие стандартным html-атрибутом hidden, но с поддержкой transition */
+[hidden] {
+  display: none !important;
+}
+
+/* Уважать prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .planet-orb img {
+    animation: none !important;
+  }
+}

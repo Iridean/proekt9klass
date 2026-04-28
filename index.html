@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Космическое путешествие — интерактивный гид по планетам</title>
+    <meta
+      name="description"
+      content="Интерактивный космический сайт: планеты Солнечной системы и землеподобные экзопланеты."
+    />
+    <meta name="theme-color" content="#06080f" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Звёздное небо (генерируется в JS) -->
+    <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+    <main class="container">
+      <!-- Шапка -->
+      <header class="header">
+        <p class="eyebrow">Интерактивный гид</p>
+        <h1 class="title">Космическое путешествие</h1>
+        <p class="subtitle">
+          Исследуйте планеты Солнечной системы и реальные землеподобные миры
+          у далёких звёзд. Нажмите на планету, чтобы узнать о ней больше.
+        </p>
+
+        <!-- Переключатель: Солнечная система / Землеподобные -->
+        <div class="tabs" role="tablist" aria-label="Выбор группы планет">
+          <button
+            type="button"
+            class="tab is-active"
+            role="tab"
+            aria-selected="true"
+            data-view="solar"
+          >
+            Солнечная система
+          </button>
+          <button
+            type="button"
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            data-view="earth-like"
+          >
+            Землеподобные планеты
+          </button>
+        </div>
+      </header>
+
+      <!-- Сцена: либо ряд планет, либо детальный вид -->
+      <section class="stage" id="stage">
+        <!-- Обзорный вид -->
+        <div class="overview" id="overview">
+          <div class="overview-heading">
+            <h2 class="section-title" id="overview-title">
+              Планеты Солнечной системы
+            </h2>
+            <p class="section-sub" id="overview-sub">
+              Земля, Марс, Юпитер и Сатурн
+            </p>
+          </div>
+
+          <div class="planet-row" id="planet-row" role="list"></div>
+
+          <div class="back-row" id="back-to-solar" hidden>
+            <button type="button" class="ghost-btn" data-action="back-to-solar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Назад к Солнечной системе
+            </button>
+          </div>
+        </div>
+
+        <!-- Детальный вид (показывается при клике на планету) -->
+        <div class="detail" id="detail" hidden>
+          <button
+            type="button"
+            class="ghost-btn detail-back"
+            data-action="back-to-overview"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Назад к обзору
+          </button>
+
+          <div class="detail-grid">
+            <!-- Левая колонка — текст -->
+            <div class="info" id="detail-info">
+              <p class="eyebrow accent" id="detail-tagline"></p>
+              <h2 class="planet-name" id="detail-name"></h2>
+              <p class="planet-description" id="detail-description"></p>
+              <dl class="facts" id="detail-facts"></dl>
+            </div>
+
+            <!-- Правая колонка — большая планета -->
+            <div class="detail-orb-wrap">
+              <div class="planet-orb detail-orb" id="detail-orb">
+                <img
+                  id="detail-orb-img"
+                  alt=""
+                  aria-hidden="true"
+                  draggable="false"
+                />
+                <span class="orb-shadow" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Школьный проект, посвящённый космосу.</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
